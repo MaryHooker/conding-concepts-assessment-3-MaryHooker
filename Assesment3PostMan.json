@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "aa9e9064-74b5-4607-9d85-9763a4d23be8",
+		"name": "20-04-23 Bank Account Assessment 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2112/api/test",
+					"host": [
+						"localhost"
+					],
+					"port": "2112",
+					"path": [
+						"api",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"accountNumber\": 112,\n        \"accountType\": \"checking\",\n        \"accountName\": \"DUMMY\",\n        \"accountBalance\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:2112/api",
+					"host": [
+						"localhost"
+					],
+					"port": "2112",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read specific account by act number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2112/api/123",
+					"host": [
+						"localhost"
+					],
+					"port": "2112",
+					"path": [
+						"api",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update account balance to 100",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"accountNumber\": 112,\n        \"accountType\": \"checking\",\n        \"accountName\": \"DUMMY\",\n        \"accountBalance\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:2112/api/123",
+					"host": [
+						"localhost"
+					],
+					"port": "2112",
+					"path": [
+						"api",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update account balance to 0",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:2112/api/remove/123",
+					"host": [
+						"localhost"
+					],
+					"port": "2112",
+					"path": [
+						"api",
+						"remove",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read all accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2112/api",
+					"host": [
+						"localhost"
+					],
+					"port": "2112",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -26,7 +26,7 @@ router.get('/:accountNumber',(req,res)=>{
     })
 })
 
-//Update bank account 
+//Update bank account balance to 100
 router.put('/:accountNumber',(req,res)=>{
     console.log(`Update request of ${req.params.accountNumber}!`)
     // res.send(`Account updated!`);
@@ -35,11 +35,11 @@ router.put('/:accountNumber',(req,res)=>{
     })
 })
 
-//Delete bank account
-router.delete('/:accountName',(req,res)=>{
-    console.log(`Delete request of ${req.params.accountName}!`)
+//Update bank account balance to 0
+router.put('/remove/:accountNumber',(req,res)=>{
+    console.log(`Update by removing balance request of ${req.params.accountNumber}!`)
     // res.send(`Account deleted!`);
-    BankAccountCollection.findOneAndDelete({accountName:req.params.accountName}, (errors,results)=>{
+    BankAccountCollection.findOneAndUpdate({accountNumber:req.params.accountNumber}, {accountBalance:0}, {results:true}, (errors,results)=>{
         errors ? res.send(errors) : res.send(results);
     })
 })
