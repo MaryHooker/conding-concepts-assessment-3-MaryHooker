@@ -35,6 +35,7 @@ class ViewAccount extends Component {
             }
         )
     }
+
     //When +100 is clicked/ run update method to change the value of accountBalance
     addMoney = async() => {
         let form = {
@@ -60,6 +61,33 @@ class ViewAccount extends Component {
         //Brute for redirect
         window.location = '/';
     }
+
+    //When -100 is clicked/ run update method to change the value of accountBalance
+    deleteMoney = async() => {
+        let form = {
+            accountNumber: this.state.accountNumber,
+            accountType: this.state.accountType,
+            accountName: this.state.accountName,
+            accountBalance: this.state.accountBalance,
+        }
+        //fetch update method
+        let response = await fetch(`/api/remove/${this.props.match.params.accountNumber}`, {
+            method: "PUT",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            //send into the body as string
+            body: JSON.stringify(form)
+        });
+        let json = await response.json();
+        //sanity
+        console.log(json)
+
+        //Brute for redirect
+        window.location = '/';
+    }
+
     render() {
         return (
             <div>
