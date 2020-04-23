@@ -4,3 +4,8 @@ body{
   text-align: center;
   font-family: serif;
 }
+
+.appContainer{
+  display: grid;
+  grid-template-columns: auto auto;
+}
