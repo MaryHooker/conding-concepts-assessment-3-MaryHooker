@@ -1,4 +1,7 @@
 import React,{Component} from 'react';
+import AddAccount from './AddAccount';
+import ListAccounts from './ListAccounts';
+import ViewAccount from './ViewAccount';
 
 class AppContainer extends Component {
     constructor(props) {
@@ -9,6 +12,9 @@ class AppContainer extends Component {
         return ( 
             <div>
                 <h1>Bank Account Manager</h1>
+                <AddAccount/>
+                <ListAccounts/>
+                <ViewAccount/>
             </div>
          );
     }
