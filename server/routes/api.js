@@ -17,7 +17,7 @@ router.post('/',(req,res)=>{
     })
 })
 
-//Read on bank account by account number
+//Read bank account by account number
 router.get('/:accountNumber',(req,res)=>{
     console.log(`Get request of ${req.params.accountNumber}!`)
     // res.send(`Read specific account!`);

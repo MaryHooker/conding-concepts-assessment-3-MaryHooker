@@ -1,20 +1,21 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class ListAccounts extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            availableAccounts:[],
-         }
+        this.state = {
+            availableAccounts: [],
+        }
     }
 
     //lifecycle method to run inner function when component mounts
-    componentDidMount(){
+    componentDidMount() {
         this.loadData();
     }
 
     //Fetch all accounts from database
-    loadData = async() => {
+    loadData = async () => {
         //fetch from endpoint
         let response = await fetch('/api');
         //pull out json data
@@ -24,32 +25,33 @@ class ListAccounts extends Component {
         //place data in stated array
         this.setState(
             {
-                availableAccounts:json
+                availableAccounts: json
             }
         )
 
     }
 
-    render() { 
-        return ( 
+    render() {
+        return (
             <div>
                 <h2>Available Accounts</h2>
                 {
-                    this.state.availableAccounts.map((account)=>{
-                        return(
+                    this.state.availableAccounts.map((account) => {
+                        return (
                             <div key={account._id}>
-                                <p>Account # {account.accountNumber}</p>
+                                {/* Link to view specific account*/}
+                                <Link to={`/details/${account.accountNumber}`}><p>Account # {account.accountNumber}</p></Link>
                                 <p>Type: {account.accountType}</p>
                                 <p>Name: {account.accountName}</p>
                                 <p>Balance: ${account.accountBalance}</p>
-                                <hr/>
+                                <hr />
                             </div>
                         )
                     })
                 }
             </div>
-         );
+        );
     }
 }
- 
+
 export default ListAccounts;

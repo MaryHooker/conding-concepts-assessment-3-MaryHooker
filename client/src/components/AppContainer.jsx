@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import AddAccount from './AddAccount';
 import ListAccounts from './ListAccounts';
-// import ViewAccount from './ViewAccount';
+import ViewAccount from './ViewAccount';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+
 
 class AppContainer extends Component {
     constructor(props) {
@@ -75,9 +76,9 @@ class AppContainer extends Component {
                         {displayAccounts}
                     </div>
                     </div>
+                    <Route path={'/details/:accountNumber'} component={ViewAccount}/>
                 </Router>
-           
-                {/* <ViewAccount/> */ }
+        
             </div >
         );
     }
