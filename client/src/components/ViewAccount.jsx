@@ -34,6 +34,7 @@ class ViewAccount extends Component {
                 accountBalance: json.accountBalance,
             }
         )
+
     }
     render() {
         return (
@@ -43,6 +44,7 @@ class ViewAccount extends Component {
                 <p>Type: {this.state.accountType}</p>
                 <p>Name: {this.state.accountName}</p>
                 <p>Balance: ${this.state.accountBalance}</p>
+                <button onClick={this.addMoney}>+ $100</button>  <button onClick={this.deleteMoney}>- $100</button>
                 <hr />
 
             </div>

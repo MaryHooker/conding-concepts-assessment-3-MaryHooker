@@ -27,10 +27,10 @@ router.get('/:accountNumber',(req,res)=>{
 })
 
 //Update bank account 
-router.put('/:accountName',(req,res)=>{
-    console.log(`Update request of ${req.params.accountName}!`)
+router.put('/:accountNumber',(req,res)=>{
+    console.log(`Update request of ${req.params.accountNumber}!`)
     // res.send(`Account updated!`);
-    BankAccountCollection.findOneAndUpdate({accountName:req.params.accountName}, req.body, {results:true},(errors,results)=>{
+    BankAccountCollection.findOneAndUpdate({accountNumber:req.params.accountNumber}, {accountBalance:100}, {results:true},(errors,results)=>{
         errors ? res.send(errors) : res.send(results);
     })
 })
