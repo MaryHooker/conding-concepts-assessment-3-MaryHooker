@@ -38,7 +38,7 @@ class ListAccounts extends Component {
                     this.state.availableAccounts.map((account)=>{
                         return(
                             <div key={account._id}>
-                                <p>Account #: {account.accountNumber}</p>
+                                <p>Account # {account.accountNumber}</p>
                                 <p>Type: {account.accountType}</p>
                                 <p>Name: {account.accountName}</p>
                                 <p>Balance: ${account.accountBalance}</p>
